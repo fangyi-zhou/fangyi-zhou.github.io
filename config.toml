@@ -1,0 +1,30 @@
+baseURL = 'https://fangyi.io/'
+languageCode = 'en-gb'
+title = 'Fangyi Zhou'
+theme = 'tufte'
+
+[[menu.nav]]
+  name = "Home"
+  pre = "<i class='fas fa-home la-lg'></i>"
+  weight = -110
+  identifier = "home"
+  url = "/"
+[[menu.nav]]
+  name = "Posts"
+  pre = "<i class='fas fa-book fa-lg'></i> "
+  weight = -100
+  identifier = "posts"
+  url = "/posts"
+[[menu.nav]]
+  name = "About"
+  pre = "<i class='fas fa-info-circle  fa-lg'></i> "
+  weight = -80
+  identifier = "about"
+  url = "/about"
+
+[params]
+  github = 'fangyi-zhou'
+  twitter = 'fangyi_zhou_'
+  copyright = 'Fangyi Zhou © CC BY 4.0'
+  orcid = '0000-0002-8973-0821'
+  google_scholar = 'PPEUHmwAAAAJ'
