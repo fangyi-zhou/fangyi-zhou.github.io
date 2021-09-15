@@ -28,3 +28,6 @@ theme = 'tufte'
   copyright = 'Fangyi Zhou © CC BY 4.0'
   orcid = '0000-0002-8973-0821'
   google_scholar = 'PPEUHmwAAAAJ'
+
+[permalinks]
+  post = '/:year/:month/:title/'
