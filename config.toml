@@ -13,8 +13,8 @@ theme = 'tufte'
   name = "Posts"
   pre = "<i class='fas fa-book fa-lg'></i> "
   weight = -100
-  identifier = "posts"
-  url = "/posts"
+  identifier = "post"
+  url = "/post"
 [[menu.nav]]
   name = "About"
   pre = "<i class='fas fa-info-circle  fa-lg'></i> "
