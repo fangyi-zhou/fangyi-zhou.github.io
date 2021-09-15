@@ -1,0 +1,7 @@
+{{ $me := "Fangyi Zhou" }}
+{{ $authors := . }}
+<p>Authors:
+  {{ range $idx, $name := $authors }}
+    {{ if eq $name $me }}<b>{{- $name -}}</b>{{ else }}{{- $name -}}{{ end }}{{ if eq (add $idx 1) (len $authors) }}.{{ else }},{{ end }}
+  {{ end }}
+</p>
