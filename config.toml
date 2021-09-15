@@ -31,3 +31,4 @@ theme = 'tufte'
 
 [permalinks]
   post = '/:year/:month/:title/'
+  publication = '/publication/:year/:title/'
