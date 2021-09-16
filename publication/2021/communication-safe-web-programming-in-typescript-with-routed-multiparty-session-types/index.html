@@ -2,7 +2,8 @@
 <title>Fangyi Zhou - Communication-Safe Web Programming in TypeScript with Routed Multiparty Session Types</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name=description content=" ">
+<meta name=description content="Modern web programming involves coordinating interactions between browser clients and a server. Typically, the interactions in web-based distributed systems are informally described, making it hard to ensure correctness, especially communication safety, i.e. all endpoints progress without type errors or deadlocks, conforming to a specified protocol.
+We present STScript, a toolchain that generates TypeScript APIs for communication-safe web development over WebSockets, and RouST, a new session type theory that supports multiparty communications with routing mechanisms. ">
 <link rel=canonical href=https://fangyi.io/publication/2021/communication-safe-web-programming-in-typescript-with-routed-multiparty-session-types/>
 <link rel=icon type=image/x-icon href=/favicon/favicon.ico>
 <link rel=stylesheet href=https://unpkg.com/purecss@2.0.6/build/pure-min.css>
@@ -36,7 +37,30 @@ Francisco Ferreira,
 Nobuko Yoshida,
 <b>Fangyi Zhou</b>.
 </p>
-<section></section>
+<p>DOI: <a href=https://doi.org/10.1145/3446804.3446854>10.1145/3446804.3446854</a></p>
+<h3>Abstract:</h3>
+<section><p>Modern web programming involves coordinating interactions between browser
+clients and a server. Typically, the interactions in web-based distributed
+systems are informally described, making it hard to ensure correctness,
+especially communication safety, i.e. all endpoints progress without type
+errors or deadlocks, conforming to a specified protocol.</p>
+<p>We present STScript, a toolchain that generates TypeScript APIs for
+communication-safe web development over WebSockets, and RouST, a new session
+type theory that supports multiparty communications with routing mechanisms.
+STScript provides developers with TypeScript APIs generated from a
+communication protocol specification based on RouST. The generated APIs build
+upon TypeScript concurrency practices, complement the event-driven style of
+programming in full-stack web development, and are compatible with the Node.js
+runtime for server-side endpoints and the React.js framework for browser-side
+endpoints.</p>
+<p>RouST can express multiparty interactions routed via an intermediate
+participant. It supports peer-to-peer communication between browser-side
+endpoints by routing communication via the server in a way that avoids
+excessive serialisation. RouST guarantees communication safety for endpoint web
+applications written using STScript APIs.</p>
+<p>We evaluate the expressiveness of STScript for modern web programming using
+several production-ready case studies deployed as web applications.</p>
+</section>
 <section>
 <footer class=page-footer>
 <hr>

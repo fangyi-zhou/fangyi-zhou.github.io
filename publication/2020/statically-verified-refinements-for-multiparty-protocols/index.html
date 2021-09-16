@@ -2,7 +2,8 @@
 <title>Fangyi Zhou - Statically Verified Refinements for Multiparty Protocols</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name=description content=" ">
+<meta name=description content="With distributed computing becoming ubiquitous in the modern era, safe distributed programming is an open challenge. To address this, multiparty session types (MPST) provide a typing discipline for message-passing concurrency, guaranteeing communication safety properties such as deadlock freedom.
+While originally MPST focus on the communication aspects, and employ a simple typing system for communication payloads, communication protocols in the real world usually contain constraints on the payload. We introduce refined multiparty session types (RMPST), an extension of MPST, that express data dependent protocols via refinement types on the data types. ">
 <link rel=canonical href=https://fangyi.io/publication/2020/statically-verified-refinements-for-multiparty-protocols/>
 <link rel=icon type=image/x-icon href=/favicon/favicon.ico>
 <link rel=stylesheet href=https://unpkg.com/purecss@2.0.6/build/pure-min.css>
@@ -37,7 +38,29 @@ Raymond Hu,
 Rumyana Neykova,
 Nobuko Yoshida.
 </p>
-<section></section>
+<p>DOI: <a href=https://doi.org/10.1145/3428216>10.1145/3428216</a></p>
+<h3>Abstract:</h3>
+<section><p>With distributed computing becoming ubiquitous in the modern era, safe
+distributed programming is an open challenge. To address this, multiparty
+session types (MPST) provide a typing discipline for message-passing
+concurrency, guaranteeing communication safety properties such as deadlock
+freedom.</p>
+<p>While originally MPST focus on the communication aspects, and employ a simple
+typing system for communication payloads, communication protocols in the real
+world usually contain constraints on the payload. We introduce refined
+multiparty session types (RMPST), an extension of MPST, that express data
+dependent protocols via refinement types on the data types.</p>
+<p>We provide an implementation of RMPST, in a toolchain called Session*, using
+Scribble, a toolchain for multiparty protocols, and targeting F*, a
+verification-oriented functional programming language. Users can describe a
+protocol in Scribble and implement the endpoints in F* using refinement-typed
+APIs generated from the protocol. The F* compiler can then statically verify
+the refinements. Moreover, we use a novel approach of callback-styled API
+generation, providing static linearity guarantees with the inversion of
+control. We evaluate our approach with real world examples and show that it has
+little overhead compared to a naive implementation, while guaranteeing safety
+properties from the underlying theory.</p>
+</section>
 <section>
 <footer class=page-footer>
 <hr>
