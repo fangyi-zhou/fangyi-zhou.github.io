@@ -16,8 +16,14 @@ theme = 'tufte'
   identifier = "post"
   url = "/post"
 [[menu.nav]]
+  name = "Publications"
+  pre = "<i class='fas fa-bookmark fa-lg'></i> "
+  weight = -90
+  identifier = "pub"
+  url = "/publication"
+[[menu.nav]]
   name = "About"
-  pre = "<i class='fas fa-info-circle  fa-lg'></i> "
+  pre = "<i class='fas fa-info-circle fa-lg'></i> "
   weight = -80
   identifier = "about"
   url = "/about"
