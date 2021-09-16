@@ -3,6 +3,7 @@ title: "Generating Interactive WebSocket Applications in TypeScript"
 authors: ["Anson Miu", "Francisco Ferreira", "Nobuko Yoshida", "Fangyi Zhou"]
 date: "2020-04-03"
 doi: "10.4204/EPTCS.314.2"
+arxiv: "2004.01321"
 ---
 Advancements in mobile device computing power have made interactive web
 applications possible, allowing the web browser to render contents dynamically

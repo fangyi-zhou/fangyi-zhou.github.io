@@ -3,6 +3,7 @@ title: Statically Verified Refinements for Multiparty Protocols
 authors: ["Fangyi Zhou", "Francisco Ferreira", "Raymond Hu", "Rumyana Neykova", "Nobuko Yoshida"]
 date: "2020-11-13"
 doi: "10.1145/3428216"
+arxiv: "2009.06541"
 ---
 
 With distributed computing becoming ubiquitous in the modern era, safe

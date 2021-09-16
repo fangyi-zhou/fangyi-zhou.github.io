@@ -9,6 +9,9 @@
     {{ with .Params.doi }}
     <p>DOI: <a href="https://doi.org/{{ . }}">{{ . }}</a></p>
     {{ end }}
+    {{ with .Params.arxiv }}
+    <p>Available on arXiv: <a href="https://arxiv.org/abs/{{ . }}">{{ . }}</a></p>
+    {{ end }}
     {{ with .Content }}
     <h3>Abstract:</h3>
     <section>{{ . }}</section>

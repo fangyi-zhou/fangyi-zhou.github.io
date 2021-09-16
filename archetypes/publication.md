@@ -7,4 +7,5 @@ conference:
   shortName: CONF
 doi: "doi-number"
 bibtex:
+arxiv:
 ---
