@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Statically Verified Refinements for Multiparty Protocols @ OOPSLA '20
 date: "2020-03-29"
 ---

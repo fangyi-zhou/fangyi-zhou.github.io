@@ -1,6 +1,5 @@
 ---
-layout: post
-title: Fluid Session Types @ PLACES
+title: Fluid Session Types @ PLACES '19
 date: "2019-04-09"
 ---
 
