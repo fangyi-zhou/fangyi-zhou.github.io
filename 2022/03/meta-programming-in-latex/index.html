@@ -1,0 +1,138 @@
+<!doctype html><html lang=en-gb><head>
+<title>Fangyi Zhou - Meta-Programming in LaTeX</title><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name=description content="Many researchers write paper in $\LaTeX$ because it provides a convenient macro system that makes typesetting maths equations easy (or difficult, when it doesn&rsquo;t work).
+One way to write papers in $\LaTeX$ is to use as few &ldquo;advanced features&rdquo; as possible, for a vanilla experience: no fancy packages, just use the minimal setup. Gradually, as the paper starts to grow long, you begin to think of adding some macros for things that are too long to type, for example: ">
+<link rel=canonical href=https://fangyi.io/2022/03/meta-programming-in-latex/>
+<link rel=icon type=image/x-icon href=/favicon/favicon.ico>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
+<script defer>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]]}}</script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css>
+<link rel=stylesheet href=https://unpkg.com/purecss@2.0.6/build/pure-min.css>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css>
+<link rel=stylesheet href=/css/hugo-tufte.min.css>
+<link rel=stylesheet href=/css/hugo-tufte-override.css>
+</head><body>
+<div id=layout class=pure-g>
+<article class=pure-u-1>
+<header class=brand>
+<a href=https://fangyi.io/><h1>Fangyi Zhou</h1></a>
+<h2></h2><nav class=menu>
+<ul>
+<li><a href=/><i class="fas fa-home la-lg"></i>Home</a></li><li><a href=/post><i class="fas fa-book fa-lg"></i> Posts</a></li><li><a href=/publication><i class="fas fa-bookmark fa-lg"></i> Publications</a></li><li><a href=/about><i class="fas fa-info-circle fa-lg"></i> About</a></li></ul></nav><hr>
+</header><section>
+<h1 class=content-title>
+<a href=/2022/03/meta-programming-in-latex/>Meta-Programming in LaTeX</a>
+</h1><span class=content-meta>
+<i class="fa fa-calendar"></i>
+&nbsp;Mar 1, 2022
+&nbsp;<i class="fa fa-clock-o"></i>
+&nbsp;4 min read
+</span>
+</section><section><p>Many researchers write paper in $\LaTeX$ because it provides a convenient macro
+system that makes typesetting maths equations easy (or difficult, when it
+doesn&rsquo;t work).</p><p>One way to write papers in $\LaTeX$ is to use as few &ldquo;advanced features&rdquo; as
+possible, for a vanilla experience: no fancy packages, just use the minimal
+setup.
+Gradually, as the paper starts to grow long, you begin to think of adding some
+macros for things that are too long to type, for example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\lCalc</span>}{<span style=color:#e6db74>$</span>\lambda<span style=color:#e6db74>$</span>-calculus}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\pCalc</span>}{<span style=color:#e6db74>$</span>\pi<span style=color:#e6db74>$</span>-calculus}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\myTool</span>}{<span style=color:#66d9ef>\textsc</span>{MyTool}}
+</span></span></code></pre></div><p>Using macros can help improve consistency in writing, and hopefully reduce a
+few keystrokes.
+However, some macros may be very similar, like the following:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\redx</span>}{{<span style=color:#66d9ef>\color</span>{red} x}}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\redy</span>}{{<span style=color:#66d9ef>\color</span>{red} y}}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\redz</span>}{{<span style=color:#66d9ef>\color</span>{red} z}}
+</span></span></code></pre></div><p>When you realise red is maybe no longer your favourite colour, and decide
+to change everything into blue.
+You may think about doing some refactor like this to make future changes
+easier:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\termcolour</span>}{<span style=color:#66d9ef>\color</span>{red}}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\termx</span>}{{<span style=color:#66d9ef>\termcolour</span> x}}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\termy</span>}{{<span style=color:#66d9ef>\termcolour</span> y}}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\termz</span>}{{<span style=color:#66d9ef>\termcolour</span> z}}
+</span></span></code></pre></div><p>Then you may want to do the same for other syntactic categories, e.g. types,
+type variables, &mldr; and okay, maybe some automation is needed.</p><h2 id=meta-programming>Meta-Programming?</h2><p>The term meta-programming can be interpreted in many ways.
+In this context, we want to write a command (i.e. a macro) to generate other
+comamnds (i.e. macros).
+It is analogous to template programming in C++ or macro programming in C.
+Fortunately, $\LaTeX$ is perfectly capable of allowing users to make macros to
+create other macros, because EVERYTHING IS A MACRO <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>.</p><p>So intuitively, we want to have something like:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#66d9ef>\makeMacro</span>{term}{x}
+</span></span></code></pre></div><p>to expand into</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\termx</span>}{{<span style=color:#66d9ef>\termcolour</span> x}}
+</span></span></code></pre></div><p>We are encounted with an immediate question: how do we create make a macro with
+a non-constant name?</p><h2 id=using-csname-and-endcsname-to-create-a-control-sequence>Using <code>\csname</code> and <code>\endcsname</code> to create a control sequence</h2><p>After some time googling around and consulting this <a href=https://texfaq.org/FAQ-csname>TeX
+FAQ</a>, I learnt these two $\TeX$ primitives for
+marking the beginning and the end of a <em>control sequence</em> (in other words,
+macro names).
+See also <a href=https://tug.org/tug2012/booklet/hendrickson/AmyTugProc.pdf>this nice article</a>.</p><p>Therefore, we can do something like:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#75715e>%%% !!! THIS DOES NOT WORK !!!
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\makeMacro</span>}[2]{<span style=color:#75715e>%
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>% #1 is the prefix, #2 is the variable
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>\newcommand\csname</span> #1#2<span style=color:#66d9ef>\endcsname</span>{<span style=color:#75715e>%
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  {<span style=color:#66d9ef>\csname</span> #1colour<span style=color:#66d9ef>\endcsname</span> #2}<span style=color:#75715e>%
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  }<span style=color:#75715e>%
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></div><p>We manage to construct a control sequence for our output macro: <code>#1#2</code> will be
+expanded into <code>\termx</code> when passing <code>{term}</code> and <code>{x}</code> as arguments.
+Moreover, the colouring macro will be generated by <code>#1colour</code>, which will be
+expanded into <code>\termcolour</code>.</p><p>A few important notes here:</p><ol>
+<li>The <code>\csname</code> and <code>\endcsname</code> must not be enclosed in curly braces (for a
+reason unknown to me, let me know if you know why).</li><li>Putting a space before <code>\endcsname</code> will actually consider space as part
+of the control sequence, so no extra space before <code>\endcsname</code>.</li></ol><p>However, the snippet above won&rsquo;t work &mdash; it will produce an <del>informative</del>
+error message:</p><pre tabindex=0><code>! LaTeX Error: Command \csname already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H &lt;return&gt;  for immediate help.
+ ...
+
+l.13 \makeMacro{term}{x}
+</code></pre><p>It seems that we are trying to define <code>\csname</code>, which is not what we want.
+A closer look at TeXFAQ reveals the missing ingredient: <code>\expandafter</code>.</p><p><em>Also, not sure where I can find a manual and check p.192</em></p><h2 id=so-we-need-to-expandafter>So we need to <code>\expandafter</code></h2><p>Intuitively, <code>\expandafter</code> delays the expansion of a macro.
+In our use case, we want the control sequence between <code>\csname</code> and
+<code>\endcsname</code> to be expanded first, then the expanded result can be used as an
+argument to <code>\newcommand</code>.</p><p>However, <code>\expandafter</code> is known to cause possible confusions, as shown in
+<a href=https://www.overleaf.com/learn/latex/Articles/A_six-part_article_series_on_%5Cexpandafter%2C_TeX_tokens_and_expansion>here</a>,
+and <a href=https://www.tug.org/TUGboat/tb09-1/tb20bechtolsheim.pdf>here</a>, as well as
+multiple questions on TeX StackExchange.
+For the sake of my own sanity, I decided not to divulge too much into details
+and take it at face value.</p><p>So this is the final result:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\makeMacro</span>}[2]{<span style=color:#75715e>%
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>% #1 is the prefix, #2 is the variable
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>\expandafter\newcommand\csname</span> #1#2<span style=color:#66d9ef>\endcsname</span>{<span style=color:#75715e>%
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  {<span style=color:#66d9ef>\csname</span> #1colour<span style=color:#66d9ef>\endcsname</span> #2}<span style=color:#75715e>%
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  }<span style=color:#75715e>%
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></div><h2 id=still-a-minor-caveat>Still, a Minor Caveat</h2><p>However, there is minor caveat that commands invoked with <code>\csname</code> and
+<code>\endcsname</code> will default to <code>\relax</code> (i.e. noop) if that command is not
+defined.
+This may be tricky to debug, as things may fail silently leaving you puzzled
+why your colour does not appear.
+One way to address this issue is to test whether the command <code>#1colour</code> exists
+before invoking it, with the eTeX primitive <code>\ifcsname</code>.</p><p>So, for the extra mile:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-tex data-lang=tex><span style=display:flex><span><span style=color:#66d9ef>\newcommand</span>{<span style=color:#66d9ef>\makeMacro</span>}[2]{<span style=color:#75715e>%
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>% #1 is the prefix, #2 is the variable
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>\expandafter\newcommand\csname</span> #1#2<span style=color:#66d9ef>\endcsname</span>{<span style=color:#75715e>%
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>\ifcsname</span> #1colour<span style=color:#66d9ef>\endcsname</span>
+</span></span><span style=display:flex><span>      {<span style=color:#66d9ef>\csname</span> #1colour<span style=color:#66d9ef>\endcsname</span> #2}<span style=color:#75715e>%
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>\else</span>
+</span></span><span style=display:flex><span>      Missing colour macro for {#1}
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>\fi</span>
+</span></span><span style=display:flex><span>  }<span style=color:#75715e>%
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></div><h2 id=thats-it>That&rsquo;s it!</h2><p>With some meta-programming, I managed to create the package
+<a href=https://github.com/fangyi-zhou/magicvariables-sty><code>magicvariables</code></a> for an
+extended version of the example covered in this article, and the package
+<a href=https://github.com/fangyi-zhou/at-end-of-env><code>atendofenv</code></a> for adding a small
+custom symbol at the end of an environment.</p><p>I hope this article is helpful for creating you own macros!</p><section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>Maybe a bit exaggerating.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></section><section>
+<footer class=page-footer>
+<hr>
+<div class=previous-post style=display:inline-block>
+<a class=link-reverse href="https://fangyi.io/publication/2021/communicating-finite-state-machines-and-an-extensible-toolchain-for-multiparty-session-types/?ref=footer">« Communicating Finite State Machines and an...</a>
+</div><div class=next-post , style=display:inline-block;float:right>
+</div><ul class=page-footer-menu>
+<li><a href=https://twitter.com/fangyi_zhou_><i class="fab fa-twitter fa-lg"></i></a></li><li><a href=https://github.com/fangyi-zhou><i class="fab fa-github fa-lg"></i></a></li><li><a href=https://orcid.org/0000-0002-8973-0821><i class="fab fa-orcid la-lg"></i></a></li><li><a href="https://scholar.google.com/citations?user=PPEUHmwAAAAJ"><i class="fas fa-graduation-cap la-lg"></i></a></li></ul><div class=copyright>
+<p>
+Fangyi Zhou © CC BY 4.0
+</p></div></footer></section></article></div></body></html>
