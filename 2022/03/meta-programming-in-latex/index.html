@@ -1,36 +1,10 @@
-<!doctype html><html lang=en-gb><head>
-<title>Fangyi Zhou - Meta-Programming in LaTeX</title><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name=description content="Many researchers write paper in $\LaTeX$ because it provides a convenient macro system that makes typesetting maths equations easy (or difficult, when it doesn&rsquo;t work).
-One way to write papers in $\LaTeX$ is to use as few &ldquo;advanced features&rdquo; as possible, for a vanilla experience: no fancy packages, just use the minimal setup. Gradually, as the paper starts to grow long, you begin to think of adding some macros for things that are too long to type, for example: ">
-<link rel=canonical href=https://fangyi.io/2022/03/meta-programming-in-latex/>
-<link rel=icon type=image/x-icon href=/favicon/favicon.ico>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<!doctype html><html lang=en-gb><head><title>Fangyi Zhou - Meta-Programming in LaTeX</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=description content="Many researchers write paper in $\LaTeX$ because it provides a convenient macro system that makes typesetting maths equations easy (or difficult, when it doesn&rsquo;t work).
+One way to write papers in $\LaTeX$ is to use as few &ldquo;advanced features&rdquo; as possible, for a vanilla experience: no fancy packages, just use the minimal setup. Gradually, as the paper starts to grow long, you begin to think of adding some macros for things that are too long to type, for example: "><link rel=canonical href=https://fangyi.io/2022/03/meta-programming-in-latex/><link rel=icon type=image/x-icon href=/favicon/favicon.ico><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
-<script defer>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]]}}</script>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css>
-<link rel=stylesheet href=https://unpkg.com/purecss@2.0.6/build/pure-min.css>
-<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css>
-<link rel=stylesheet href=/css/hugo-tufte.min.css>
-<link rel=stylesheet href=/css/hugo-tufte-override.css>
-</head><body>
-<div id=layout class=pure-g>
-<article class=pure-u-1>
-<header class=brand>
-<a href=https://fangyi.io/><h1>Fangyi Zhou</h1></a>
-<h2></h2><nav class=menu>
-<ul>
-<li><a href=/><i class="fas fa-home la-lg"></i>Home</a></li><li><a href=/post><i class="fas fa-book fa-lg"></i> Posts</a></li><li><a href=/publication><i class="fas fa-bookmark fa-lg"></i> Publications</a></li><li><a href=/about><i class="fas fa-info-circle fa-lg"></i> About</a></li></ul></nav><hr>
-</header><section>
-<h1 class=content-title>
-<a href=/2022/03/meta-programming-in-latex/>Meta-Programming in LaTeX</a>
-</h1><span class=content-meta>
-<i class="fa fa-calendar"></i>
+<script defer>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]]}}</script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css><link rel=stylesheet href=https://unpkg.com/purecss@2.0.6/build/pure-min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css><link rel=stylesheet href=/css/hugo-tufte.min.css><link rel=stylesheet href=/css/hugo-tufte-override.css></head><body><div id=layout class=pure-g><article class=pure-u-1><header class=brand><a href=https://fangyi.io/><h1>Fangyi Zhou</h1></a><h2></h2><nav class=menu><ul><li><a href=/><i class="fas fa-home la-lg"></i>Home</a></li><li><a href=/post><i class="fas fa-book fa-lg"></i> Posts</a></li><li><a href=/publication><i class="fas fa-bookmark fa-lg"></i> Publications</a></li><li><a href=/about><i class="fas fa-info-circle fa-lg"></i> About</a></li></ul></nav><hr></header><section><h1 class=content-title><a href=/2022/03/meta-programming-in-latex/>Meta-Programming in LaTeX</a></h1><span class=content-meta><i class="fa fa-calendar"></i>
 &nbsp;Mar 1, 2022
 &nbsp;<i class="fa fa-clock-o"></i>
-&nbsp;4 min read
-</span>
-</section><section><p>Many researchers write paper in $\LaTeX$ because it provides a convenient macro
+&nbsp;4 min read</span></section><section><p>Many researchers write paper in $\LaTeX$ because it provides a convenient macro
 system that makes typesetting maths equations easy (or difficult, when it
 doesn&rsquo;t work).</p><p>One way to write papers in $\LaTeX$ is to use as few &ldquo;advanced features&rdquo; as
 possible, for a vanilla experience: no fancy packages, just use the minimal
@@ -74,8 +48,7 @@ See also <a href=https://tug.org/tug2012/booklet/hendrickson/AmyTugProc.pdf>this
 </span></span></code></pre></div><p>We manage to construct a control sequence for our output macro: <code>#1#2</code> will be
 expanded into <code>\termx</code> when passing <code>{term}</code> and <code>{x}</code> as arguments.
 Moreover, the colouring macro will be generated by <code>#1colour</code>, which will be
-expanded into <code>\termcolour</code>.</p><p>A few important notes here:</p><ol>
-<li>The <code>\csname</code> and <code>\endcsname</code> must not be enclosed in curly braces (for a
+expanded into <code>\termcolour</code>.</p><p>A few important notes here:</p><ol><li>The <code>\csname</code> and <code>\endcsname</code> must not be enclosed in curly braces (for a
 reason unknown to me, let me know if you know why).</li><li>Putting a space before <code>\endcsname</code> will actually consider space as part
 of the control sequence, so no extra space before <code>\endcsname</code>.</li></ol><p>However, the snippet above won&rsquo;t work &mdash; it will produce an <del>informative</del>
 error message:</p><pre tabindex=0><code>! LaTeX Error: Command \csname already defined.
@@ -121,18 +94,4 @@ before invoking it, with the eTeX primitive <code>\ifcsname</code>.</p><p>So, fo
 <a href=https://github.com/fangyi-zhou/magicvariables-sty><code>magicvariables</code></a> for an
 extended version of the example covered in this article, and the package
 <a href=https://github.com/fangyi-zhou/at-end-of-env><code>atendofenv</code></a> for adding a small
-custom symbol at the end of an environment.</p><p>I hope this article is helpful for creating you own macros!</p><section class=footnotes role=doc-endnotes>
-<hr>
-<ol>
-<li id=fn:1 role=doc-endnote>
-<p>Maybe a bit exaggerating.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></section><section>
-<footer class=page-footer>
-<hr>
-<div class=previous-post style=display:inline-block>
-<a class=link-reverse href="https://fangyi.io/publication/2021/communicating-finite-state-machines-and-an-extensible-toolchain-for-multiparty-session-types/?ref=footer">« Communicating Finite State Machines and an...</a>
-</div><div class=next-post , style=display:inline-block;float:right>
-</div><ul class=page-footer-menu>
-<li><a href=https://twitter.com/fangyi_zhou_><i class="fab fa-twitter fa-lg"></i></a></li><li><a href=https://github.com/fangyi-zhou><i class="fab fa-github fa-lg"></i></a></li><li><a href=https://orcid.org/0000-0002-8973-0821><i class="fab fa-orcid la-lg"></i></a></li><li><a href="https://scholar.google.com/citations?user=PPEUHmwAAAAJ"><i class="fas fa-graduation-cap la-lg"></i></a></li></ul><div class=copyright>
-<p>
-Fangyi Zhou © CC BY 4.0
-</p></div></footer></section></article></div></body></html>
+custom symbol at the end of an environment.</p><p>I hope this article is helpful for creating you own macros!</p><section class=footnotes role=doc-endnotes><hr><ol><li id=fn:1 role=doc-endnote><p>Maybe a bit exaggerating.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></section></section><section><footer class=page-footer><hr><div class=previous-post style=display:inline-block><a class=link-reverse href="https://fangyi.io/publication/2021/communicating-finite-state-machines-and-an-extensible-toolchain-for-multiparty-session-types/?ref=footer">« Communicating Finite State Machines and an...</a></div><div class=next-post , style=display:inline-block;float:right></div><ul class=page-footer-menu><li><a href=https://twitter.com/fangyi_zhou_><i class="fab fa-twitter fa-lg"></i></a></li><li><a href=https://github.com/fangyi-zhou><i class="fab fa-github fa-lg"></i></a></li><li><a href=https://orcid.org/0000-0002-8973-0821><i class="fab fa-orcid la-lg"></i></a></li><li><a href="https://scholar.google.com/citations?user=PPEUHmwAAAAJ"><i class="fas fa-graduation-cap la-lg"></i></a></li></ul><div class=copyright><p>Fangyi Zhou © CC BY 4.0</p></div></footer></section></article></div></body></html>
