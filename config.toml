@@ -5,7 +5,7 @@ theme = 'tufte'
 
 [[menu.nav]]
   name = "Home"
-  pre = "<i class='fas fa-home la-lg'></i>"
+  pre = "<i class='fas fa-home fa-lg'></i>"
   weight = -110
   identifier = "home"
   url = "/"
@@ -22,9 +22,15 @@ theme = 'tufte'
   identifier = "pub"
   url = "/publication"
 [[menu.nav]]
+  name = "Talks"
+  pre = "<i class='fas fa-chalkboard fa-lg'></i>"
+  weight = -80
+  identifier = "talks"
+  url = "/talks"
+[[menu.nav]]
   name = "About"
   pre = "<i class='fas fa-info-circle fa-lg'></i> "
-  weight = -80
+  weight = -70
   identifier = "about"
   url = "/about"
 
