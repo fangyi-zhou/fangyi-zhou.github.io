@@ -2,7 +2,7 @@
 title: "Generalised Multiparty Session Types with Crash-Stop Failures"
 authors: ["Adam D. Barwell", "Alceste Scalas", "Nobuko Yoshida", "Fangyi Zhou"]
 date: "2022-09-12"
-doi: "10.4230/LIPIcs.CONCUR.2022.3"
+doi: "10.4230/LIPIcs.CONCUR.2022.35"
 arxiv: "2207.02015"
 math: true
 ---
