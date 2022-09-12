@@ -7,6 +7,10 @@ permalink: /talks/
 Here are an (incomplete) list of my talks and their slides:
 
 - Generalised Multiparty Session Types with Crash-Stop Failures
+  + Sep 2022 ---
+      [Stardust Project Meeting](https://epsrc-stardust.github.io/meetings/kent22.html)
+      --- Canterbury, UK
+      ([slides](/assets/slides/StardustMeeting2022.pdf))
   + Aug 2022 ---
       [INI Concurrency Meeting](https://johnwickerson.github.io/cw2022.html)
       --- Cambridge, UK
