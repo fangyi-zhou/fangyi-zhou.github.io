@@ -11,7 +11,7 @@ _Neo-Classical Logic_ for [SIGBOVIK](http://sigbovik.org/) 2022[^1].
 You can read the paper [here](/assets/papers/neoclassical-logic.pdf) (with reviews).
 
 In this ~~April Fool's~~ paper, we explore a possible logic that encapsulates
-seemingly contradictory observations in the real work.
+seemingly contradictory observations in the real life.
 We investigate how such contradictions can be represented in a logic, and show
 its decidability.
 Moreover, we prove standard theorems such as "Law of Excluded Middle", but also
