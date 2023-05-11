@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am a PhD student at Imperial College London, advised by Prof. Nobuko Yoshida.
+I am an Applied Scientist at Amazon Prime Video.
 
 I use [they/them](http://pronoun.is/they) pronouns.
 
