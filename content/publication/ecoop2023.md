@@ -1,8 +1,8 @@
 ---
 title: "Designing Asynchronous Multiparty Protocols with Crash-Stop Failures"
 authors: ["Adam D. Barwell", "Ping Hou", "Nobuko Yoshida", "Fangyi Zhou"]
-date: "2023-07-21"
-doi: "10.4230/LIPIcs.ECOOP.2023.30"
+date: "2023-07-11"
+doi: "10.4230/LIPIcs.ECOOP.2023.1"
 arxiv: "2305.06238"
 ---
 
