@@ -1,0 +1,54 @@
+<!doctype html><html lang=en-gb><head><title>Fangyi Zhou - What the date?</title>
+<meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=description content="A friend of mine found out something interesting with the date command in coreutils:
+Are these different for you too?
+$ date -d 'a week ago' $ date -d '1 week ago' Indeed, after trying it on my terminal, the two dates differ by one hour.
+$ date -d 'a week ago' Mon 6 Nov 21:51:16 GMT 2023 $ date -d '1 week ago' Mon 6 Nov 22:51:18 GMT 2023 However, the results are different for my friend: "><link rel=canonical href=https://fangyi.io/2023/11/what-the-date/><link rel=icon type=image/x-icon href=/favicon/favicon.ico><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css><link rel=stylesheet href=https://unpkg.com/purecss@2.0.6/build/pure-min.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css><link rel=stylesheet href=/css/hugo-tufte.min.css><link rel=stylesheet href=/css/hugo-tufte-override.css></head><body><div id=layout class=pure-g><article class=pure-u-1><header class=brand><a href=https://fangyi.io/><h1>Fangyi Zhou</h1></a><h2></h2><nav class=menu><ul><li><a href=/><i class='fas fa-home fa-lg'></i>Home</a></li><li><a href=/post><i class='fas fa-book fa-lg'></i> Posts</a></li><li><a href=/publication><i class='fas fa-bookmark fa-lg'></i> Publications</a></li><li><a href=/talks><i class='fas fa-chalkboard fa-lg'></i>Talks</a></li><li><a href=/about><i class='fas fa-info-circle fa-lg'></i> About</a></li></ul></nav><hr></header><section><h1 class=content-title><a href=/2023/11/what-the-date/>What the date?</a></h1><span class=content-meta><i class="fa fa-calendar"></i>
+&nbsp;Nov 13, 2023
+&nbsp;<i class="fa fa-clock-o"></i>
+&nbsp;3 min read</span></section><section><p>A friend of mine found out something interesting with the <code>date</code> command in
+coreutils:</p><blockquote><p>Are these different for you too?</p></blockquote><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ date -d <span style=color:#e6db74>&#39;a week ago&#39;</span>
+</span></span><span style=display:flex><span>$ date -d <span style=color:#e6db74>&#39;1 week ago&#39;</span>
+</span></span></code></pre></div><p>Indeed, after trying it on my terminal, the two dates differ by one hour.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ date -d <span style=color:#e6db74>&#39;a week ago&#39;</span>
+</span></span><span style=display:flex><span>Mon  <span style=color:#ae81ff>6</span> Nov 21:51:16 GMT <span style=color:#ae81ff>2023</span>
+</span></span><span style=display:flex><span>$ date -d <span style=color:#e6db74>&#39;1 week ago&#39;</span>
+</span></span><span style=display:flex><span>Mon  <span style=color:#ae81ff>6</span> Nov 22:51:18 GMT <span style=color:#ae81ff>2023</span>
+</span></span></code></pre></div><p>However, the results are different for my friend:</p><blockquote><p>For me it&rsquo;s off by 6h, another machine off by 4h.</p></blockquote><p>This got my curious and I started to dig into the manual<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>. First of all, <code>-d</code>
+flag allows the user to specify a time:</p><blockquote><pre><code>   -d, --date=STRING
+        display time described by STRING, not ’now’
+</code></pre></blockquote><p>Let&rsquo;s see what such a <code>STRING</code> could be:</p><blockquote><pre><code>DATE STRING
+       The  ‐‐date=STRING is a mostly free format human readable date
+       string such as &quot;Sun, 29 Feb 2004 16:21:42 ‐0800&quot; or &quot;2004‐02‐29
+       16:21:42&quot; or even &quot;next Thursday&quot;. A date string may contain items
+       indicating calendar date, time of day, time zone, day of week,
+       relative time, relative date, and numbers. An empty string
+       indicates the beginning of the day. The date string format is more
+       complex than is easily documented here but is fully described in
+       the info documentation.
+</code></pre></blockquote><p>Okay, let&rsquo;s go through the <a href=https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html>date input formats
+documentation</a>
+to see how it works.</p><p>Under Section 29.7 &ldquo;<a href=https://www.gnu.org/software/coreutils/manual/html_node/Relative-items-in-date-strings.html>Relative items in date
+strings</a>&rdquo;:</p><blockquote><p>The unit of time may be preceded by a multiplier, given as an optionally
+signed number. Unsigned numbers are taken as positively signed. No number at
+all implies 1 for a multiplier. Following a relative item by the string ‘ago’
+is equivalent to preceding the unit by a multiplier with value -1.</p></blockquote><p>The examples under this section all use numeric multipliers, such as &ldquo;1 year&rdquo;
+or &ldquo;1 year ago&rdquo;, instead of &ldquo;a year&rdquo; or &ldquo;a year ago&rdquo;. It appears that &ldquo;a&rdquo;
+is recognised incorrectly as part of the input, but what is it?</p><p>At this point I decided to dive into the source code for parsing the date
+string, which is located <a href=https://github.com/coreutils/gnulib/blob/master/lib/parse-datetime.y>here</a>.
+I looked for what can possible accepting the input &ldquo;a&rdquo;, and I found a
+<a href=https://github.com/coreutils/gnulib/blob/c165047d204745a97869113b75f43cbee761c8b7/lib/parse-datetime.y#L1165>candidate</a>
+for the letter &ldquo;a&rdquo;:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#66d9ef>static</span> table <span style=color:#66d9ef>const</span> military_table[] <span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  { <span style=color:#e6db74>&#34;A&#34;</span>, tZONE,  <span style=color:#a6e22e>HOUR</span> ( <span style=color:#ae81ff>1</span>) },
+</span></span><span style=display:flex><span>  ...
+</span></span><span style=display:flex><span>};
+</span></span></code></pre></div><p>So the letter &ldquo;a&rdquo; stands for the <a href=https://en.wikipedia.org/wiki/Military_time_zone>military
+timezone</a> &ldquo;alfa&rdquo; (GMT+1),
+which explains the difference in output:
+I am currently in timezone GMT; &ldquo;week ago&rdquo; implicitly means &ldquo;1 week ago&rdquo; and
+the timezone alfa (&ldquo;a week ago&rdquo;) would be 1 hour before the &ldquo;1 week ago&rdquo; in my
+current timezone, thus the difference.
+My friend&rsquo;s computer is possibly in a different timezone, thus resulting in a
+difference gap.</p><p>That was a interesting finding. Had we been in the summer time (GMT+1), &ldquo;a
+week ago&rdquo; and &ldquo;1 week ago&rdquo; would actually result in the same output, and we
+would never realise the problem.</p><p>Take away message: when specifying a relative time using <code>date</code>, don&rsquo;t use the
+indefinite article &ldquo;a&rdquo; and always use the numeric &ldquo;1&rdquo;.</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>The version of coreutils on my Fedora 39 is 9.3.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></section><section><footer class=page-footer><hr><div class=previous-post style=display:inline-block><a class=link-reverse href="https://fangyi.io/publication/2023/designing-asynchronous-multiparty-protocols-with-crash-stop-failures/?ref=footer">« Designing Asynchronous Multiparty Protocols with...</a></div><div class=next-post , style=display:inline-block;float:right></div><ul class=page-footer-menu><li><a href=https://twitter.com/fangyi_zhou_><i class='fab fa-twitter fa-lg'></i></a></li><li><a href=https://github.com/fangyi-zhou><i class='fab fa-github fa-lg'></i></a></li><li><a href=https://orcid.org/0000-0002-8973-0821><i class='fab fa-orcid la-lg'></i></a></li><li><a href="https://scholar.google.com/citations?user=PPEUHmwAAAAJ"><i class='fas fa-graduation-cap la-lg'></i></a></li></ul><div class=copyright><p>Fangyi Zhou © CC BY 4.0</p></div></footer></section></article></div></body></html>
