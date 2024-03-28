@@ -13,9 +13,9 @@ While originally MPST focus on the communication aspects, and employ a simple ty
 Multiparty session types (MPST) provide a framework for verifying conformance of implementations to their prescribed communication protocol.</description></item><item><title>Statically Verified Refinements for Multiparty Protocols @ OOPSLA '20</title><link>https://fangyi.io/2020/03/statically-verified-refinements-for-multiparty-protocols-@-oopsla-20/</link><pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate><guid>https://fangyi.io/2020/03/statically-verified-refinements-for-multiparty-protocols-@-oopsla-20/</guid><description>I presented my paper Statically Verified Refinements for Multiparty Protocols at OOPSLA 2020 this year, held virtually. This paper is co-authored by Francisco Ferreira, Raymond Hu, Rumyana Neykova, and Nobuko Yoshida.
 You can find the paper here from the publisher (Open Access). The full version of the paper is available on arXiv at 2009.06541.
 The video of the talk is available on YouTube (full version, 15 min), and a short version (5 min) is also available.</description></item><item><title>About</title><link>https://fangyi.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://fangyi.io/about/</guid><description>I am an Applied Scientist at Amazon Prime Video.
+Before I joined Amazon, I was a PhD student at Imperial College London. My PhD thesis title is Refining Multiparty Session Types.
 I use they/them pronouns.
-Some links:
-Google Scholar
+Some links: Google Scholar
 DBLP
 ORCID: 0000-0002-8973-0821
 GPG Public Key</description></item><item><title>Talks</title><link>https://fangyi.io/talks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://fangyi.io/talks/</guid><description>Here are an (incomplete) list of my talks and their slides:
