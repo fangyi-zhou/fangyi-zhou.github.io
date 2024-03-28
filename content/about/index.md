@@ -6,9 +6,14 @@ permalink: /about/
 
 I am an Applied Scientist at Amazon Prime Video.
 
+Before I joined Amazon,
+I was a PhD student at Imperial College London.
+My PhD thesis title is
+[Refining Multiparty Session Types](/assets/phd-thesis.pdf).
+
 I use [they/them](http://pronoun.is/they) pronouns.
 
-Some links:
+### Some links:
 
 [Google Scholar](https://scholar.google.com/citations?user=PPEUHmwAAAAJ&hl=en)
 
