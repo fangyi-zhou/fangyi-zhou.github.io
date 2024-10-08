@@ -1,22 +1,168 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fangyi Zhou</title><link>https://fangyi.io/</link><description>Recent content on Fangyi Zhou</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Mon, 13 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://fangyi.io/index.xml" rel="self" type="application/rss+xml"/><item><title>What the date?</title><link>https://fangyi.io/2023/11/what-the-date/</link><pubDate>Mon, 13 Nov 2023 00:00:00 +0000</pubDate><guid>https://fangyi.io/2023/11/what-the-date/</guid><description>A friend of mine found out something interesting with the date command in coreutils:
-Are these different for you too?
-$ date -d &amp;#39;a week ago&amp;#39; $ date -d &amp;#39;1 week ago&amp;#39; Indeed, after trying it on my terminal, the two dates differ by one hour.
-$ date -d &amp;#39;a week ago&amp;#39; Mon 6 Nov 21:51:16 GMT 2023 $ date -d &amp;#39;1 week ago&amp;#39; Mon 6 Nov 22:51:18 GMT 2023 However, the results are different for my friend:</description></item><item><title>Designing Asynchronous Multiparty Protocols with Crash-Stop Failures</title><link>https://fangyi.io/publication/2023/designing-asynchronous-multiparty-protocols-with-crash-stop-failures/</link><pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2023/designing-asynchronous-multiparty-protocols-with-crash-stop-failures/</guid><description>Session types provide a typing discipline for message-passing systems. However, most session type approaches assume an ideal world: one in which everything is reliable and without failures. Yet this is in stark contrast with distributed systems in the real world. To address this limitation, we introduce Teatrino, a code generation toolchain that utilises asynchronous multiparty session types (MPST) with crash-stop semantics to support failure handling protocols.
-We augment asynchronous MPST and processes with crash handling branches.</description></item><item><title>Producing long and short versions of a paper in LaTeX</title><link>https://fangyi.io/2023/02/producing-long-and-short-versions-of-a-paper-in-latex/</link><pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate><guid>https://fangyi.io/2023/02/producing-long-and-short-versions-of-a-paper-in-latex/</guid><description>Conferences have different submission requirements for papers. Submissions are usually subject to a page limit, but supplementary materials (or appendices) are permitted. Here is a guide to produce various versions of a paper in LaTeX.
-Short and Long Versions The easiest way is probably to produce a short version that satisfies the page limit, and a long version containing omitted details (usually in an appendix). This way has the benefit that one can simply read the long version, as it usually contains the short version in its entirely.</description></item><item><title>Generalised Multiparty Session Types with Crash-Stop Failures</title><link>https://fangyi.io/publication/2022/generalised-multiparty-session-types-with-crash-stop-failures/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2022/generalised-multiparty-session-types-with-crash-stop-failures/</guid><description>Session types enable the specification and verification of communicating systems. However, their theory often assumes that processes never fail. To address this limitation, we present a generalised multiparty session type (MPST) theory with crash-stop failures, where processes can crash arbitrarily.
-Our new theory validates more protocols and processes w.r.t. previous work. We apply minimal syntactic changes to standard session $\pi$-calculus and types: we model crashes and their handling semantically, with a generalised MPST typing system parametric on a behavioural safety property.</description></item><item><title>Neo-Classical Logic (SIGBOVIK 2022)</title><link>https://fangyi.io/2022/04/neo-classical-logic-sigbovik-2022/</link><pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate><guid>https://fangyi.io/2022/04/neo-classical-logic-sigbovik-2022/</guid><description>My colleague Martin Vassor and I worked on a paper with title Neo-Classical Logic for SIGBOVIK 20221.
-You can read the paper here (with reviews).
-In this April Fool&amp;rsquo;s paper, we explore a possible logic that encapsulates seemingly contradictory observations in the real life. We investigate how such contradictions can be represented in a logic, and show its decidability. Moreover, we prove standard theorems such as &amp;ldquo;Law of Excluded Middle&amp;rdquo;, but also novel theorems such as &amp;ldquo;Law of Contradiction&amp;rdquo;.</description></item><item><title>Meta-Programming in LaTeX</title><link>https://fangyi.io/2022/03/meta-programming-in-latex/</link><pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate><guid>https://fangyi.io/2022/03/meta-programming-in-latex/</guid><description>Many researchers write paper in $\LaTeX$ because it provides a convenient macro system that makes typesetting maths equations easy (or difficult, when it doesn&amp;rsquo;t work).
-One way to write papers in $\LaTeX$ is to use as few &amp;ldquo;advanced features&amp;rdquo; as possible, for a vanilla experience: no fancy packages, just use the minimal setup. Gradually, as the paper starts to grow long, you begin to think of adding some macros for things that are too long to type, for example:</description></item><item><title>Communicating Finite State Machines and an Extensible Toolchain for Multiparty Session Types</title><link>https://fangyi.io/publication/2021/communicating-finite-state-machines-and-an-extensible-toolchain-for-multiparty-session-types/</link><pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2021/communicating-finite-state-machines-and-an-extensible-toolchain-for-multiparty-session-types/</guid><description>Multiparty session types (MPST) provide a typing discipline for message passing concurrency, ensuring deadlock freedom for distributed processes. This paper first summarises the relationship between MPST and communicating finite state machines (CFSMs), which offers not only theoretical justifications of MPST but also a guidance to implement MPST in practice. As one of the applications, we present 𝜈SCR (NuScr), an extensible toolchain for MPST-based multiparty protocols. The toolchain can convert multiparty protocols in the Scribble protocol description language into global types in the MPST theory; global types are projected into local types, and local types are converted to their corresponding CFSMs.</description></item><item><title>Communication-Safe Web Programming in TypeScript with Routed Multiparty Session Types</title><link>https://fangyi.io/publication/2021/communication-safe-web-programming-in-typescript-with-routed-multiparty-session-types/</link><pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2021/communication-safe-web-programming-in-typescript-with-routed-multiparty-session-types/</guid><description>Modern web programming involves coordinating interactions between browser clients and a server. Typically, the interactions in web-based distributed systems are informally described, making it hard to ensure correctness, especially communication safety, i.e. all endpoints progress without type errors or deadlocks, conforming to a specified protocol.
-We present STScript, a toolchain that generates TypeScript APIs for communication-safe web development over WebSockets, and RouST, a new session type theory that supports multiparty communications with routing mechanisms.</description></item><item><title>Statically Verified Refinements for Multiparty Protocols</title><link>https://fangyi.io/publication/2020/statically-verified-refinements-for-multiparty-protocols/</link><pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2020/statically-verified-refinements-for-multiparty-protocols/</guid><description>With distributed computing becoming ubiquitous in the modern era, safe distributed programming is an open challenge. To address this, multiparty session types (MPST) provide a typing discipline for message-passing concurrency, guaranteeing communication safety properties such as deadlock freedom.
-While originally MPST focus on the communication aspects, and employ a simple typing system for communication payloads, communication protocols in the real world usually contain constraints on the payload. We introduce refined multiparty session types (RMPST), an extension of MPST, that express data dependent protocols via refinement types on the data types.</description></item><item><title>Generating Interactive WebSocket Applications in TypeScript</title><link>https://fangyi.io/publication/2020/generating-interactive-websocket-applications-in-typescript/</link><pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2020/generating-interactive-websocket-applications-in-typescript/</guid><description>Advancements in mobile device computing power have made interactive web applications possible, allowing the web browser to render contents dynamically and support low-latency communication with the server. This comes at a cost to the developer, who now needs to reason more about correctness of communication patterns in their application as web applications support more complex communication patterns.
-Multiparty session types (MPST) provide a framework for verifying conformance of implementations to their prescribed communication protocol.</description></item><item><title>Statically Verified Refinements for Multiparty Protocols @ OOPSLA '20</title><link>https://fangyi.io/2020/03/statically-verified-refinements-for-multiparty-protocols-@-oopsla-20/</link><pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate><guid>https://fangyi.io/2020/03/statically-verified-refinements-for-multiparty-protocols-@-oopsla-20/</guid><description>I presented my paper Statically Verified Refinements for Multiparty Protocols at OOPSLA 2020 this year, held virtually. This paper is co-authored by Francisco Ferreira, Raymond Hu, Rumyana Neykova, and Nobuko Yoshida.
-You can find the paper here from the publisher (Open Access). The full version of the paper is available on arXiv at 2009.06541.
-The video of the talk is available on YouTube (full version, 15 min), and a short version (5 min) is also available.</description></item><item><title>About</title><link>https://fangyi.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://fangyi.io/about/</guid><description>I am an Applied Scientist at Amazon Prime Video.
-Before I joined Amazon, I was a PhD student at Imperial College London. My PhD thesis title is Refining Multiparty Session Types.
-I use they/them pronouns.
-Some links: Google Scholar
-DBLP
-ORCID: 0000-0002-8973-0821
-GPG Public Key</description></item><item><title>Talks</title><link>https://fangyi.io/talks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://fangyi.io/talks/</guid><description>Here are an (incomplete) list of my talks and their slides:
-Generalised Multiparty Session Types with Crash-Stop Failures Sep 2022 &amp;mdash; Stardust Project Meeting &amp;mdash; Canterbury, UK (slides) Aug 2022 &amp;mdash; INI Concurrency Meeting &amp;mdash; Cambridge, UK (slides) Monitoring Protocol Conformance with Multiparty Session Types and OpenTelemetry Sep 2021 &amp;mdash; Dagstuhl Seminar: Behavioural Types: Bridging Theory and Practice &amp;mdash; Virtual (slides) Mar 2021 &amp;mdash; Mass Open Cloud Telemetry Working Group &amp;mdash; Virtual (slides) Statically Verified Refinements for Multiparty Protocols Mar 2021 &amp;mdash; PLUG (Programming Language Research in Glasgow) &amp;mdash; Virtual Nov 2020 &amp;mdash; SPLASH 2020 - OOPSLA &amp;mdash; Virtual (slides)</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fangyi Zhou</title><link>https://fangyi.io/</link><description>Recent content on Fangyi Zhou</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Mon, 13 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://fangyi.io/index.xml" rel="self" type="application/rss+xml"/><item><title>What the date?</title><link>https://fangyi.io/2023/11/what-the-date/</link><pubDate>Mon, 13 Nov 2023 00:00:00 +0000</pubDate><guid>https://fangyi.io/2023/11/what-the-date/</guid><description>&lt;p>A friend of mine found out something interesting with the &lt;code>date&lt;/code> command in
+coreutils:&lt;/p>
+&lt;blockquote>
+&lt;p>Are these different for you too?&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ date -d &lt;span style="color:#e6db74">&amp;#39;a week ago&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ date -d &lt;span style="color:#e6db74">&amp;#39;1 week ago&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Indeed, after trying it on my terminal, the two dates differ by one hour.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ date -d &lt;span style="color:#e6db74">&amp;#39;a week ago&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Mon &lt;span style="color:#ae81ff">6&lt;/span> Nov 21:51:16 GMT &lt;span style="color:#ae81ff">2023&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ date -d &lt;span style="color:#e6db74">&amp;#39;1 week ago&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Mon &lt;span style="color:#ae81ff">6&lt;/span> Nov 22:51:18 GMT &lt;span style="color:#ae81ff">2023&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>However, the results are different for my friend:&lt;/p></description></item><item><title>Designing Asynchronous Multiparty Protocols with Crash-Stop Failures</title><link>https://fangyi.io/publication/2023/designing-asynchronous-multiparty-protocols-with-crash-stop-failures/</link><pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2023/designing-asynchronous-multiparty-protocols-with-crash-stop-failures/</guid><description>&lt;p>Session types provide a typing discipline for message-passing systems. However,
+most session type approaches assume an ideal world: one in which everything is
+reliable and without failures. Yet this is in stark contrast with distributed
+systems in the real world. To address this limitation, we introduce Teatrino, a
+code generation toolchain that utilises asynchronous multiparty session types
+(MPST) with crash-stop semantics to support failure handling protocols.&lt;/p>
+&lt;p>We augment asynchronous MPST and processes with crash handling branches. Our
+approach requires no user-level syntax extensions for global types and features
+a formalisation of global semantics, which captures complex behaviours induced
+by crashed/crash handling processes. The sound and complete correspondence
+between global and local type semantics guarantees deadlockfreedom, protocol
+conformance, and liveness of typed processes in the presence of crashes.&lt;/p></description></item><item><title>Producing long and short versions of a paper in LaTeX</title><link>https://fangyi.io/2023/02/producing-long-and-short-versions-of-a-paper-in-latex/</link><pubDate>Mon, 27 Feb 2023 00:00:00 +0000</pubDate><guid>https://fangyi.io/2023/02/producing-long-and-short-versions-of-a-paper-in-latex/</guid><description>&lt;p>Conferences have different submission requirements for papers.
+Submissions are usually subject to a page limit, but supplementary materials
+(or appendices) are permitted.
+Here is a guide to produce various versions of a paper in LaTeX.&lt;/p>
+&lt;h2 id="short-and-long-versions">Short and Long Versions&lt;/h2>
+&lt;p>The easiest way is probably to produce a short version that satisfies the page
+limit,
+and a long version containing omitted details (usually in an appendix).
+This way has the benefit that one can simply read the long version, as it
+usually contains the short version in its entirely.&lt;/p></description></item><item><title>Generalised Multiparty Session Types with Crash-Stop Failures</title><link>https://fangyi.io/publication/2022/generalised-multiparty-session-types-with-crash-stop-failures/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2022/generalised-multiparty-session-types-with-crash-stop-failures/</guid><description>&lt;p>Session types enable the specification and verification of communicating
+systems. However, their theory often assumes that processes never fail. To
+address this limitation, we present a generalised multiparty session type
+(MPST) theory with crash-stop failures, where processes can crash arbitrarily.&lt;/p>
+&lt;p>Our new theory validates more protocols and processes w.r.t. previous work. We
+apply minimal syntactic changes to standard session $\pi$-calculus and types:
+we model crashes and their handling semantically, with a generalised MPST
+typing system parametric on a behavioural safety property. We cover the
+spectrum between fully reliable and fully unreliable sessions, via optional
+reliability assumptions, and prove type safety and protocol conformance in the
+presence of crash-stop failures.&lt;/p></description></item><item><title>Neo-Classical Logic (SIGBOVIK 2022)</title><link>https://fangyi.io/2022/04/neo-classical-logic-sigbovik-2022/</link><pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate><guid>https://fangyi.io/2022/04/neo-classical-logic-sigbovik-2022/</guid><description>&lt;p>My colleague Martin Vassor and I worked on a paper with title
+&lt;em>Neo-Classical Logic&lt;/em> for &lt;a href="http://sigbovik.org/">SIGBOVIK&lt;/a> 2022&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>.&lt;/p>
+&lt;p>You can read the paper &lt;a href="https://fangyi.io/assets/papers/neoclassical-logic.pdf">here&lt;/a> (with reviews).&lt;/p>
+&lt;p>In this &lt;del>April Fool&amp;rsquo;s&lt;/del> paper, we explore a possible logic that encapsulates
+seemingly contradictory observations in the real life.
+We investigate how such contradictions can be represented in a logic, and show
+its decidability.
+Moreover, we prove standard theorems such as &amp;ldquo;Law of Excluded Middle&amp;rdquo;, but also
+novel theorems such as &amp;ldquo;Law of Contradiction&amp;rdquo;.&lt;/p></description></item><item><title>Meta-Programming in LaTeX</title><link>https://fangyi.io/2022/03/meta-programming-in-latex/</link><pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate><guid>https://fangyi.io/2022/03/meta-programming-in-latex/</guid><description>&lt;p>Many researchers write paper in $\LaTeX$ because it provides a convenient macro
+system that makes typesetting maths equations easy (or difficult, when it
+doesn&amp;rsquo;t work).&lt;/p>
+&lt;p>One way to write papers in $\LaTeX$ is to use as few &amp;ldquo;advanced features&amp;rdquo; as
+possible, for a vanilla experience: no fancy packages, just use the minimal
+setup.
+Gradually, as the paper starts to grow long, you begin to think of adding some
+macros for things that are too long to type, for example:&lt;/p></description></item><item><title>Communicating Finite State Machines and an Extensible Toolchain for Multiparty Session Types</title><link>https://fangyi.io/publication/2021/communicating-finite-state-machines-and-an-extensible-toolchain-for-multiparty-session-types/</link><pubDate>Thu, 09 Sep 2021 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2021/communicating-finite-state-machines-and-an-extensible-toolchain-for-multiparty-session-types/</guid><description>&lt;p>Multiparty session types (MPST) provide a typing discipline for message passing
+concurrency, ensuring deadlock freedom for distributed processes. This paper
+first summarises the relationship between MPST and communicating finite state
+machines (CFSMs), which offers not only theoretical justifications of MPST but
+also a guidance to implement MPST in practice. As one of the applications, we
+present 𝜈SCR (NuScr), an extensible toolchain for MPST-based multiparty
+protocols. The toolchain can convert multiparty protocols in the Scribble
+protocol description language into global types in the MPST theory; global
+types are projected into local types, and local types are converted to their
+corresponding CFSMs. The toolchain also generates APIs from CFSMs that
+implement endpoints in the protocol. Our design allows for language-independent
+code generation, and opens possibilities to generate APIs in various
+programming languages. We design our toolchain with modularity and
+extensibility in mind, so that extensions of core MPST can be easily integrated
+within our framework. As a case study, we show the implementation of the nested
+protocol extension in 𝜈SCR , to showcase our extensibility.&lt;/p></description></item><item><title>Communication-Safe Web Programming in TypeScript with Routed Multiparty Session Types</title><link>https://fangyi.io/publication/2021/communication-safe-web-programming-in-typescript-with-routed-multiparty-session-types/</link><pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2021/communication-safe-web-programming-in-typescript-with-routed-multiparty-session-types/</guid><description>&lt;p>Modern web programming involves coordinating interactions between browser
+clients and a server. Typically, the interactions in web-based distributed
+systems are informally described, making it hard to ensure correctness,
+especially communication safety, i.e. all endpoints progress without type
+errors or deadlocks, conforming to a specified protocol.&lt;/p>
+&lt;p>We present STScript, a toolchain that generates TypeScript APIs for
+communication-safe web development over WebSockets, and RouST, a new session
+type theory that supports multiparty communications with routing mechanisms.
+STScript provides developers with TypeScript APIs generated from a
+communication protocol specification based on RouST. The generated APIs build
+upon TypeScript concurrency practices, complement the event-driven style of
+programming in full-stack web development, and are compatible with the Node.js
+runtime for server-side endpoints and the React.js framework for browser-side
+endpoints.&lt;/p></description></item><item><title>Statically Verified Refinements for Multiparty Protocols</title><link>https://fangyi.io/publication/2020/statically-verified-refinements-for-multiparty-protocols/</link><pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2020/statically-verified-refinements-for-multiparty-protocols/</guid><description>&lt;p>With distributed computing becoming ubiquitous in the modern era, safe
+distributed programming is an open challenge. To address this, multiparty
+session types (MPST) provide a typing discipline for message-passing
+concurrency, guaranteeing communication safety properties such as deadlock
+freedom.&lt;/p>
+&lt;p>While originally MPST focus on the communication aspects, and employ a simple
+typing system for communication payloads, communication protocols in the real
+world usually contain constraints on the payload. We introduce refined
+multiparty session types (RMPST), an extension of MPST, that express data
+dependent protocols via refinement types on the data types.&lt;/p></description></item><item><title>Generating Interactive WebSocket Applications in TypeScript</title><link>https://fangyi.io/publication/2020/generating-interactive-websocket-applications-in-typescript/</link><pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2020/generating-interactive-websocket-applications-in-typescript/</guid><description>&lt;p>Advancements in mobile device computing power have made interactive web
+applications possible, allowing the web browser to render contents dynamically
+and support low-latency communication with the server. This comes at a cost to
+the developer, who now needs to reason more about correctness of communication
+patterns in their application as web applications support more complex
+communication patterns.&lt;/p>
+&lt;p>Multiparty session types (MPST) provide a framework for verifying conformance
+of implementations to their prescribed communication protocol. Existing
+proposals for applying the MPST framework in application developments either
+neglect the event-driven nature of web applications, or lack compatibility with
+industry tools and practices, which discourages mainstream adoption by web
+developers.&lt;/p></description></item><item><title>Statically Verified Refinements for Multiparty Protocols @ OOPSLA '20</title><link>https://fangyi.io/2020/03/statically-verified-refinements-for-multiparty-protocols-@-oopsla-20/</link><pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate><guid>https://fangyi.io/2020/03/statically-verified-refinements-for-multiparty-protocols-@-oopsla-20/</guid><description>&lt;p>I presented my paper &lt;em>Statically Verified Refinements for Multiparty Protocols&lt;/em>
+at &lt;a href="https://2020.splashcon.org/">OOPSLA 2020&lt;/a> this year, held virtually.
+This paper is co-authored by &lt;a href="https://www.doc.ic.ac.uk/~fferre16/">Francisco Ferreira&lt;/a>,
+&lt;a href="https://researchprofiles.herts.ac.uk/portal/en/persons/raymond-hu(81400c55-0b06-4e2a-aba4-1b6593381f22).html">Raymond Hu&lt;/a>,
+&lt;a href="https://www.brunel.ac.uk/people/rumyana-neykova">Rumyana Neykova&lt;/a>,
+and &lt;a href="http://mrg.doc.ic.ac.uk/people/nobuko-yoshida/">Nobuko Yoshida&lt;/a>.&lt;/p>
+&lt;p>You can find the paper &lt;a href="https://dl.acm.org/doi/10.1145/3428216">here&lt;/a> from the
+publisher (Open Access). The full version of the paper is available on arXiv at
+&lt;a href="https://arxiv.org/abs/2009.06541">2009.06541&lt;/a>.&lt;/p>
+&lt;p>The video of the talk is available on
+&lt;a href="https://www.youtube.com/watch?v=eHhDkQusTAw">YouTube&lt;/a> (full version, 15 min),
+and a short version (5 min) is &lt;a href="https://www.youtube.com/watch?v=Y9aVD-7KfRw">also
+available&lt;/a>.&lt;/p>
+&lt;p>Our paper has an accompanying artifact (as a Docker image). Source codes are
+available on &lt;a href="https://github.com/sessionstar/oopsla20-artifact">GitHub&lt;/a>.&lt;/p></description></item><item><title>About</title><link>https://fangyi.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://fangyi.io/about/</guid><description>&lt;p>I am a Software Development Engineer at Amazon Prime Video.&lt;/p>
+&lt;p>Before I joined Amazon,
+I was a PhD student at Imperial College London.
+My PhD thesis title is
+&lt;a href="https://fangyi.io/assets/phd-thesis.pdf">Refining Multiparty Session Types&lt;/a>.&lt;/p>
+&lt;p>I use &lt;a href="http://pronoun.is/they">they/them&lt;/a> pronouns.&lt;/p>
+&lt;h3 id="some-links">Some links:&lt;/h3>
+&lt;p>&lt;a href="https://scholar.google.com/citations?user=PPEUHmwAAAAJ&amp;amp;hl=en">Google Scholar&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://dblp.uni-trier.de/pid/80/6096-2.html">DBLP&lt;/a>&lt;/p>
+&lt;p>ORCID: &lt;a href="https://orcid.org/0000-0002-8973-0821">0000-0002-8973-0821&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://fangyi.io/fangyi.asc">GPG Public Key&lt;/a>&lt;/p></description></item><item><title>Talks</title><link>https://fangyi.io/talks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://fangyi.io/talks/</guid><description>&lt;p>Here are an (incomplete) list of my talks and their slides:&lt;/p>
+&lt;ul>
+&lt;li>Generalised Multiparty Session Types with Crash-Stop Failures
+&lt;ul>
+&lt;li>Sep 2022 &amp;mdash;
+&lt;a href="https://epsrc-stardust.github.io/meetings/kent22.html">Stardust Project Meeting&lt;/a>
+&amp;mdash; Canterbury, UK
+(&lt;a href="https://fangyi.io/assets/slides/StardustMeeting2022.pdf">slides&lt;/a>)&lt;/li>
+&lt;li>Aug 2022 &amp;mdash;
+&lt;a href="https://johnwickerson.github.io/cw2022.html">INI Concurrency Meeting&lt;/a>
+&amp;mdash; Cambridge, UK
+(&lt;a href="https://fangyi.io/assets/slides/INIConcurrencyMeeting2022.pdf">slides&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Monitoring Protocol Conformance with Multiparty Session Types and OpenTelemetry
+&lt;ul>
+&lt;li>Sep 2021 &amp;mdash;
+&lt;a href="https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=21372">Dagstuhl Seminar: &lt;em>Behavioural Types: Bridging Theory and Practice&lt;/em>&lt;/a>
+&amp;mdash; Virtual
+(&lt;a href="https://fangyi.io/assets/slides/Dagstuhl2021.pdf">slides&lt;/a>)&lt;/li>
+&lt;li>Mar 2021 &amp;mdash;
+Mass Open Cloud &lt;a href="https://openinfralabs.org/telemetry/">Telemetry Working Group&lt;/a>
+&amp;mdash; Virtual
+(&lt;a href="https://fangyi.io/assets/slides/TelemetryWG2021.pdf">slides&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Statically Verified Refinements for Multiparty Protocols
+&lt;ul>
+&lt;li>Mar 2021 &amp;mdash;
+&lt;a href="https://samoa.dcs.gla.ac.uk/events/viewtalk.jsp?id=17602">PLUG&lt;/a>
+(Programming Language Research in Glasgow) &amp;mdash; Virtual&lt;/li>
+&lt;li>Nov 2020 &amp;mdash;
+&lt;a href="https://2020.splashcon.org/details/splash-2020-oopsla/24/Statically-Verified-Refinements-for-Multiparty-Protocols">SPLASH 2020 -
+OOPSLA&lt;/a>
+&amp;mdash; Virtual
+(&lt;a href="https://fangyi.io/assets/slides/OOSPLA2020.pdf">slides&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
