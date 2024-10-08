@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am an Applied Scientist at Amazon Prime Video.
+I am a Software Development Engineer at Amazon Prime Video.
 
 Before I joined Amazon,
 I was a PhD student at Imperial College London.
