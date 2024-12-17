@@ -4,7 +4,10 @@ title: About
 permalink: /about/
 ---
 
-I am a Software Development Engineer at Amazon Prime Video.
+I am currently on a career break.
+
+Previously, I worked as an Applied Scientist, then as a Software Development
+Engineer at Amazon Prime Video.
 
 Before I joined Amazon,
 I was a PhD student at Imperial College London.
