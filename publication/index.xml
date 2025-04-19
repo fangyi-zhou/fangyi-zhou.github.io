@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Publications on Fangyi Zhou</title><link>https://fangyi.io/publication/</link><description>Recent content in Publications on Fangyi Zhou</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Tue, 11 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://fangyi.io/publication/index.xml" rel="self" type="application/rss+xml"/><item><title>Designing Asynchronous Multiparty Protocols with Crash-Stop Failures</title><link>https://fangyi.io/publication/2023/designing-asynchronous-multiparty-protocols-with-crash-stop-failures/</link><pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2023/designing-asynchronous-multiparty-protocols-with-crash-stop-failures/</guid><description>&lt;p>Session types provide a typing discipline for message-passing systems. However,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Publications on Fangyi Zhou</title><link>https://fangyi.io/publication/</link><description>Recent content in Publications on Fangyi Zhou</description><generator>Hugo</generator><language>en-gb</language><lastBuildDate>Fri, 18 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://fangyi.io/publication/index.xml" rel="self" type="application/rss+xml"/><item><title>Crash-Stop Failures in Asynchronous Multiparty Session Types</title><link>https://fangyi.io/publication/2025/crash-stop-failures-in-asynchronous-multiparty-session-types/</link><pubDate>Fri, 18 Apr 2025 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2025/crash-stop-failures-in-asynchronous-multiparty-session-types/</guid><description>&lt;p>Session types provide a typing discipline for message-passing systems. However,
+their theory often assumes an ideal world: one in which everything is reliable
+and without failures. Yet this is in stark contrast with distributed systems in
+the real world. To address this limitation, we introduce a new asynchronous
+multiparty session types (MPST) theory with crash-stop failures, where
+processes may crash arbitrarily and cease to interact after crashing. We
+augment asynchronous MPST and processes with crash handling branches, and
+integrate crash-stop failure semantics into types and processes. Our approach
+requires no user-level syntax extensions for global types, and features a
+formalisation of global semantics, which captures complex behaviours induced by
+crashed/crash handling processes. Our new theory covers the entire spectrum,
+ranging from the ideal world of total reliability to entirely unreliable
+scenarios where any process may crash, using optional reliability assumptions.
+Under these assumptions, we demonstrate the sound and complete correspondence
+between global and local type semantics, which guarantee deadlock-freedom,
+protocol conformance, and liveness of well-typed processes by construction,
+even in the presence of crashes.&lt;/p></description></item><item><title>Designing Asynchronous Multiparty Protocols with Crash-Stop Failures</title><link>https://fangyi.io/publication/2023/designing-asynchronous-multiparty-protocols-with-crash-stop-failures/</link><pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate><guid>https://fangyi.io/publication/2023/designing-asynchronous-multiparty-protocols-with-crash-stop-failures/</guid><description>&lt;p>Session types provide a typing discipline for message-passing systems. However,
 most session type approaches assume an ideal world: one in which everything is
 reliable and without failures. Yet this is in stark contrast with distributed
 systems in the real world. To address this limitation, we introduce Teatrino, a
