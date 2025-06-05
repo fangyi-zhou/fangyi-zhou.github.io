@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am currently on a career break.
+I am a Software Engineer at Meta.
 
 Previously, I worked as an Applied Scientist, then as a Software Development
 Engineer at Amazon Prime Video.
