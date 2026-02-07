@@ -44,6 +44,21 @@ pygmentscodefencesguesssyntax = true
   icon = "github"
   url = "https://github.com/fangyi-zhou"
 
+[[params.social]]
+  name = "Threads"
+  icon = "simple:threads"
+  url = "https://www.threads.com/@fangyi.zhou_"
+
+[[params.social]]
+  name = "ORCID"
+  icon = "simple:orcid"
+  url = "https://orcid.org/0000-0002-8973-0821"
+
+[[params.social]]
+  name = "Google Scholar"
+  icon = "simple:googlescholar"
+  url = "https://scholar.google.com/citations?user=PPEUHmwAAAAJ"
+
 [permalinks]
   post = '/:year/:month/:title/'
   publication = '/publication/:year/:title/'
