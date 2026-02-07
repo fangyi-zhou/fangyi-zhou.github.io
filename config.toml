@@ -44,11 +44,6 @@ pygmentscodefencesguesssyntax = true
   icon = "github"
   url = "https://github.com/fangyi-zhou"
 
-[[params.social]]
-  name = "Twitter"
-  icon = "twitter"
-  url = "https://twitter.com/fangyi_zhou_"
-
 [permalinks]
   post = '/:year/:month/:title/'
   publication = '/publication/:year/:title/'
