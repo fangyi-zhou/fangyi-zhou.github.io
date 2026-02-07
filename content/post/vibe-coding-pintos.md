@@ -26,6 +26,11 @@ After I read the article, the natural question came to my mind:
 [^1]: People would probably disagree with this term, but the engineer literally
     sent the agents to work and walked away.
 
+The premise of this experiment is to figure out whether it is possible to a
+hypothetical student to complete the coursework with modern AI technology.
+I am assuming a basic level of AI knowledge (not using MCP or skills, for
+instance), and will give basic guidances without much course-correcting.
+
 ## What is Pintos?
 
 Pintos is an operating system that is famous enough to have its own [Wikipedia
