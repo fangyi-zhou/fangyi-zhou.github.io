@@ -1,45 +1,53 @@
 baseURL = 'https://fangyi.io/'
 languageCode = 'en-gb'
 title = 'Fangyi Zhou'
-theme = 'tufte'
+theme = 'archie'
+copyright = 'Fangyi Zhou © CC BY 4.0'
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
 
-[[menu.nav]]
+[[menu.main]]
   name = "Home"
-  pre = "<i class='fas fa-home fa-lg'></i>"
-  weight = -110
+  weight = 1
   identifier = "home"
   url = "/"
-[[menu.nav]]
+[[menu.main]]
   name = "Posts"
-  pre = "<i class='fas fa-book fa-lg'></i> "
-  weight = -100
+  weight = 2
   identifier = "post"
   url = "/post"
-[[menu.nav]]
+[[menu.main]]
   name = "Publications"
-  pre = "<i class='fas fa-bookmark fa-lg'></i> "
-  weight = -90
+  weight = 3
   identifier = "pub"
   url = "/publication"
-[[menu.nav]]
+[[menu.main]]
   name = "Talks"
-  pre = "<i class='fas fa-chalkboard fa-lg'></i>"
-  weight = -80
+  weight = 4
   identifier = "talks"
   url = "/talks"
-[[menu.nav]]
+[[menu.main]]
   name = "About"
-  pre = "<i class='fas fa-info-circle fa-lg'></i> "
-  weight = -70
+  weight = 5
   identifier = "about"
   url = "/about"
 
 [params]
-  github = 'fangyi-zhou'
-  twitter = 'fangyi_zhou_'
-  copyright = 'Fangyi Zhou © CC BY 4.0'
-  orcid = '0000-0002-8973-0821'
-  google_scholar = 'PPEUHmwAAAAJ'
+  mode = "auto"
+  useCDN = false
+  mainSections = ["post"]
+  katex = true
+
+[[params.social]]
+  name = "GitHub"
+  icon = "github"
+  url = "https://github.com/fangyi-zhou"
+
+[[params.social]]
+  name = "Twitter"
+  icon = "twitter"
+  url = "https://twitter.com/fangyi_zhou_"
 
 [permalinks]
   post = '/:year/:month/:title/'

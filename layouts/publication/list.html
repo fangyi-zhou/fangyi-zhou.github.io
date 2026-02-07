@@ -1,25 +1,18 @@
 {{ define "main" }}
 
-<div id="layout" class="pure-g">
-<article class="pure-u-1">
-{{ partial "brand.html" . }}
-  {{ partial "content.header.html" . }}
-  <section class="list-page">
-  {{ range .Data.Pages.GroupByDate "2006" }}
-    <details open>
-      <summary class="year">{{ .Key }} ({{ len .Pages }})</summary>
-        {{ range .Pages }}
-          <ul>
-            <li>
-              <a href="{{ .RelPermalink }}">{{.Title}}</a>
-            </li>
-          </ul>
-        {{ end }}
-    </details>
-    {{ end }}
-  </section>
-{{ partial "footer.html" . }}
-</article>
-</div>
+<h1 class="page-title">Publications</h1>
+
+{{ range .Data.Pages.GroupByDate "2006" }}
+  <details open>
+    <summary class="year">{{ .Key }} ({{ len .Pages }})</summary>
+      {{ range .Pages }}
+        <ul>
+          <li>
+            <a href="{{ .RelPermalink }}">{{.Title}}</a>
+          </li>
+        </ul>
+      {{ end }}
+  </details>
+{{ end }}
 
 {{ end }}
