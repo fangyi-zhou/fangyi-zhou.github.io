@@ -47,8 +47,11 @@ The coursework requires students to provide implementations and design docs,
 and is evaluated by an automatic grader (with testsuite provided), and a
 design/code review.
 The version of this coursework I did during university had minor abridgements
-from the original one, and you can find the coursework via [this
+from the original one (we didn't have the file system project), and you can
+find the coursework via [this
 link](https://www.doc.ic.ac.uk/~mjw03/OSLab/pintos.pdf).
+In this exercise, I'm also going to complete the first 3 projects (threading,
+user program, and virtual memory).
 
 ## Setting up
 
@@ -113,5 +116,61 @@ Claude had difficulty understanding and wanted to kick off the execution.
 >
 > ...
 
-After a minute of thinking, Claude saved the plan to a file, and it's time to
-go on a break.
+After a minute of thinking, Claude saved the plan to a
+[file](https://github.com/fangyi-zhou/vibe-coded-pintos/blob/master/plans/PROJECT1-PLAN.md),
+and it's time to go on a break.
+
+## Session 1: Let's get threading going
+
+Claude splitted the project into 4 tasks: alarm clock, priority scheduling,
+priority scheduling, and MLFQS scheduler.
+Since this is the first project, the coursework provided ample guidance for
+this project to be a warm-up task for students, although the
+[requirement](https://www.scs.stanford.edu/25sp-cs212/pintos/pintos_2.html#SEC23)
+divided the project into 3 parts instead of 4.
+
+Claude hinted to me that I shall install Clang LSP, which I happily did so, and
+then Claude started to generate code for the tasks.
+For the alarm clock task, it took only 2 minutes to complete. and verified the
+implementation by running test.
+Then, Claude quickly went on to implement priority scheduling, which I had to
+interrupt Claude and asked it to make a commit for completing the previous
+task.
+
+After that, Claude continued with the implemented and ran the tests for
+priority scheduling.
+Unfortunately, the tests did not pass on the first go --- Claude implemented
+the priority ordering the other way around, which Claude quickly identified the
+error and inverted the sorting order.
+
+At this point, Claude was quite happy to continue pumping out code. It quickly
+completed the third task, made a commit, and continued with the final task.
+Again, it look took a few minutes for Claude to finish. I remember taking quite
+a long time during university time, having to go through corner cases and
+drawing diagrams.
+
+The final task, MLFQS (Multi-Level Feedback Queue System) was relatively
+eaasy to implement, but it took quite a long time to run the test.
+Unfortunately, running these tests in parallel took too much resources, and the
+Claude code process got `pkill`ed.
+However, it was able to recover and completed on the second try.
+
+At this point, the last thing is the design document. I actually forgot to
+download the design document template and place it in the git repository, so
+Claude went everywhere to look for the template. I noticed it was probably my
+fault, interrupted Claude, downloaded the templates, and prompted Claude to
+continue. Claude produced a plausible [design
+doc](https://github.com/fangyi-zhou/vibe-coded-pintos/blob/master/doc/threads.tmpl).
+
+As we are towards the completion of the project, I asked Claude to update the
+CLAUDE.md file, and checked usage. For this session, we have used around 2/3 of
+the session usage.
+
+Similar to last time, I kicked off a plan mode prompt asking Claude to plan for
+the next project. This time, I reminded Claude to commit after each task, and
+to write the design docs, then Claude went on exploring the codebase and the
+requirements.
+I was surprised by the token usage for the planning mode, as
+it did not manage to complete within the remaining 1/3 session usage limit.
+I turned on some extra usage, and invited Claude to finish, here is the
+[plan](https://github.com/fangyi-zhou/vibe-coded-pintos/blob/master/plans/project2-plan.md).
