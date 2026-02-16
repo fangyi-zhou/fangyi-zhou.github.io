@@ -122,22 +122,22 @@ and it's time to go on a break.
 
 ## Session 1: Let's get threading going
 
-Claude splitted the project into 4 tasks: alarm clock, priority scheduling,
-priority scheduling, and MLFQS scheduler.
+Claude split the project into 4 tasks: alarm clock, priority scheduling,
+priority donation, and MLFQS scheduler.
 Since this is the first project, the coursework provided ample guidance for
 this project to be a warm-up task for students, although the
 [requirement](https://www.scs.stanford.edu/25sp-cs212/pintos/pintos_2.html#SEC23)
 divided the project into 3 parts instead of 4.
 
-Claude hinted to me that I shall install Clang LSP, which I happily did so, and
+Claude hinted to me that I should install Clang LSP, which I happily did, and
 then Claude started to generate code for the tasks.
-For the alarm clock task, it took only 2 minutes to complete. and verified the
-implementation by running test.
+For the alarm clock task, it took only 2 minutes to complete and verified the
+implementation by running the test.
 Then, Claude quickly went on to implement priority scheduling, which I had to
 interrupt Claude and asked it to make a commit for completing the previous
 task.
 
-After that, Claude continued with the implemented and ran the tests for
+After that, Claude continued with the implementation and ran the tests for
 priority scheduling.
 Unfortunately, the tests did not pass on the first go --- Claude implemented
 the priority ordering the other way around, which Claude quickly identified the
@@ -145,19 +145,19 @@ error and inverted the sorting order.
 
 At this point, Claude was quite happy to continue pumping out code. It quickly
 completed the third task, made a commit, and continued with the final task.
-Again, it look took a few minutes for Claude to finish. I remember taking quite
+Again, it only took a few minutes for Claude to finish. I remember taking quite
 a long time during university time, having to go through corner cases and
 drawing diagrams.
 
 The final task, MLFQS (Multi-Level Feedback Queue System) was relatively
-eaasy to implement, but it took quite a long time to run the test.
+easy to implement, but it took quite a long time to run the test.
 Unfortunately, running these tests in parallel took too much resources, and the
 Claude code process got `pkill`ed.
 However, it was able to recover and completed on the second try.
 
 At this point, the last thing is the design document. I actually forgot to
 download the design document template and place it in the git repository, so
-Claude went everywhere to look for the template. I noticed it was probably my
+Claude looked everywhere for the template. I noticed it was probably my
 fault, interrupted Claude, downloaded the templates, and prompted Claude to
 continue. Claude produced a plausible [design
 doc](https://github.com/fangyi-zhou/vibe-coded-pintos/blob/master/doc/threads.tmpl).
