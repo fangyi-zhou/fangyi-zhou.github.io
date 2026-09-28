@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Fangyi Zhou</title><link>https://fangyi.io/post/</link><description>Recent content in Posts on Fangyi Zhou</description><generator>Hugo</generator><language>en-gb</language><copyright>Fangyi Zhou © CC BY 4.0</copyright><lastBuildDate>Sat, 07 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://fangyi.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Changing the theme of the blog</title><link>https://fangyi.io/2026/02/changing-the-theme-of-the-blog/</link><pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate><guid>https://fangyi.io/2026/02/changing-the-theme-of-the-blog/</guid><description>&lt;p>I wanted to write something in the blog again.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Fangyi Zhou</title><link>https://fangyi.io/post/</link><description>Recent content in Posts on Fangyi Zhou</description><generator>Hugo</generator><language>en-gb</language><copyright>Fangyi Zhou © CC BY 4.0</copyright><lastBuildDate>Mon, 28 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://fangyi.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Vibe Coding Pintos</title><link>https://fangyi.io/2026/09/vibe-coding-pintos/</link><pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate><guid>https://fangyi.io/2026/09/vibe-coding-pintos/</guid><description>&lt;h2 id="motivation">Motivation&lt;/h2>
+&lt;p>In my second year as a computer science undergraduate, there were two
+major group projects: a compiler and an operating system.
+These group projects left some significant memories even though the projects were
+almost a decade ago, especially Pintos, where I spent more than a few long
+nights with colleagues in the computer lab debugging random race conditions.
+The departmental student society gave out ceremonial glasses with &amp;ldquo;Pintos
+Survivor&amp;rdquo; on them, which underscores the importance of Pintos during the
+university years.&lt;/p></description></item><item><title>Changing the theme of the blog</title><link>https://fangyi.io/2026/02/changing-the-theme-of-the-blog/</link><pubDate>Sat, 07 Feb 2026 00:00:00 +0000</pubDate><guid>https://fangyi.io/2026/02/changing-the-theme-of-the-blog/</guid><description>&lt;p>I wanted to write something in the blog again.
 Unfortunately, the website no longer builds with my original theme.
 After spending some time to debug and fix the theme, I decided to give up and
 asked Claude to migrate my blog to a new theme.&lt;/p>

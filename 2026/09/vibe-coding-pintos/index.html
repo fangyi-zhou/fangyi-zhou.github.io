@@ -1,0 +1,141 @@
+<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Vibe Coding Pintos - Fangyi Zhou</title><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Motivation
+In my second year as a computer science undergraduate, there were two
+major group projects: a compiler and an operating system.
+These group projects left some significant memories even though the projects were
+almost a decade ago, especially Pintos, where I spent more than a few long
+nights with colleagues in the computer lab debugging random race conditions.
+The departmental student society gave out ceremonial glasses with &ldquo;Pintos
+Survivor&rdquo; on them, which underscores the importance of Pintos during the
+university years."><meta property="og:image" content="https://fangyi.io/"><meta property="og:url" content="https://fangyi.io/2026/09/vibe-coding-pintos/"><meta property="og:site_name" content="Fangyi Zhou"><meta property="og:title" content="Vibe Coding Pintos"><meta property="og:description" content="Motivation In my second year as a computer science undergraduate, there were two major group projects: a compiler and an operating system. These group projects left some significant memories even though the projects were almost a decade ago, especially Pintos, where I spent more than a few long nights with colleagues in the computer lab debugging random race conditions. The departmental student society gave out ceremonial glasses with “Pintos Survivor” on them, which underscores the importance of Pintos during the university years."><meta property="og:locale" content="en_gb"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2026-09-28T00:00:00+00:00"><meta property="article:modified_time" content="2026-09-28T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Vibe Coding Pintos"><meta name=twitter:description content="Motivation In my second year as a computer science undergraduate, there were two major group projects: a compiler and an operating system. These group projects left some significant memories even though the projects were almost a decade ago, especially Pintos, where I spent more than a few long nights with colleagues in the computer lab debugging random race conditions. The departmental student society gave out ceremonial glasses with “Pintos Survivor” on them, which underscores the importance of Pintos during the university years."><link rel=stylesheet href=https://fangyi.io/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css type=text/css><link rel=stylesheet href=https://fangyi.io/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css type=text/css><link rel=stylesheet href=https://fangyi.io/css/simple-icons.cc125cfd7958efc8dc27b5dfa6e2a9bbab933ce50b754f77e669e587c16ce857.css type=text/css><link href=https://fangyi.io/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://fangyi.io/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://fangyi.io/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css media="(prefers-color-scheme: dark)"><link rel=stylesheet href=https://fangyi.io/katex/katex.min.css><script defer src=https://fangyi.io/katex/katex.min.js></script><script defer src=https://fangyi.io/katex/auto-render.min.js onload=renderMathInElement(document.body)></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})})</script></head><body><div class=content><header><div class=main><a href=https://fangyi.io/>Fangyi Zhou</a></div><nav><a href=/>Home</a>
+<a href=/post>Posts</a>
+<a href=/publication>Publications</a>
+<a href=/talks>Talks</a>
+<a href=/about>About</a></nav></header><main><article><div class=post-container><div class=post-content><div class=title><h1 class=title>Vibe Coding Pintos</h1><div class=meta>Posted on Sep 28, 2026</div></div><section class=body><h2 id=motivation>Motivation</h2><p>In my second year as a computer science undergraduate, there were two
+major group projects: a compiler and an operating system.
+These group projects left some significant memories even though the projects were
+almost a decade ago, especially Pintos, where I spent more than a few long
+nights with colleagues in the computer lab debugging random race conditions.
+The departmental student society gave out ceremonial glasses with &ldquo;Pintos
+Survivor&rdquo; on them, which underscores the importance of Pintos during the
+university years.</p><p>Recently<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>, Anthropic claimed to have &ldquo;vibe coded&rdquo;<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup> a compiler from
+scratch (See <a href=https://github.com/anthropics/claudes-c-compiler>code</a>,
+<a href=https://www.anthropic.com/engineering/building-c-compiler>post</a>).
+After I read the article, a natural question came to mind:</p><div class='callout callout-'><div class=callout-inner>💡 Can we vibe code Pintos too?</div></div><p>The premise of this experiment is to figure out whether it is possible for a
+hypothetical student to complete the coursework with modern AI technology.
+I am assuming a basic level of AI knowledge (not using MCP or skills, for
+instance), and will give basic guidance without much course-correcting.</p><div class='callout callout-alert'><div class=callout-inner>🚨 <u>Alert</u><br>Important Note on Outdatedness</div></div><p>I started working on the project half a year ago, when I was still trying to
+figure out how to integrate AI into my daily workflow. Unfortunately, another
+half-year has passed, and I still haven&rsquo;t finished writing this post (and I
+don&rsquo;t plan to finish the rest).
+A lot of things that might have made sense then sound absurd now.
+Nowadays, models have become smarter, and it&rsquo;s possible for LLMs to complete
+much more complex tasks without human guidance.
+AI systems are working to solve the next hard problems in science, and the
+problem described here sounds almost trivial in retrospect.</p><h2 id=what-is-pintos>What is Pintos?</h2><p>Pintos is an operating system that is famous enough to have its own <a href=https://en.wikipedia.org/wiki/Pintos>Wikipedia
+page</a>.
+In short, it&rsquo;s an operating system that is designed for teaching OS concepts to
+computer science students, originally created at Stanford.
+The students are given a basic OS codebase, with four main tasks to implement:
+threading, userland & system calls, virtual memory, and file systems.
+Apart from the codebase, a self-contained manual was provided that explains
+the existing components of the OS and describes the tasks students are required
+to complete.</p><p>The coursework requires students to provide implementations and design docs,
+and is evaluated by an automatic grader (with a test suite provided) and a
+design/code review.
+The version of this coursework I did at university had minor abridgements
+compared with the original (we didn&rsquo;t have the file system project), and you can
+find the coursework via <a href=https://www.doc.ic.ac.uk/~mjw03/OSLab/pintos.pdf>this
+link</a>.
+In this exercise, I&rsquo;m also going to complete the first three projects (threading,
+user program, and virtual memory).</p><h2 id=setting-up>Setting up</h2><p>In this exercise, I downloaded Pintos from the Stanford course
+website and used the reference docs
+<a href=https://www.scs.stanford.edu/25sp-cs212/reference/>here</a>.
+I cloned the repository from <a href=http://cs212.scs.stanford.edu/pintos.git>http://cs212.scs.stanford.edu/pintos.git</a> and
+downloaded the documentation to the <code>doc</code> directory.</p><p>I&rsquo;m using Claude Code with Opus 4.6 on a Mac. I have a Pro subscription, which
+means I will hit limits pretty often and have to cool down.
+One side benefit is that I can number the vibe-coding sessions by when I hit
+the usage limit. So let&rsquo;s get into vibe coding.</p><h2 id=session-0-setting-up-dev-environment-and-claudemd>Session 0: Setting up dev environment and <code>CLAUDE.md</code></h2><p>I opened Claude Code, typed <code>/init</code>, and patiently waited for Claude to spit out
+a nice summary file.
+Since I was running on a Mac, a specific cross-compiler was needed to build for
+x86 (Pintos runs on an 80x86 CPU, whatever that means).
+Claude was able to install that for me, as well as QEMU, the emulator. It was
+also able to patch out problematic parts of the <code>Makefile</code> and make Pintos build on
+my machine.
+This was something I didn&rsquo;t manage to achieve during university (partly
+because I was too lazy to figure it out),
+so I had to SSH into a university Linux machine that had the
+environment pre-configured.</p><p>Now that Pintos is able to run on my machine, I asked Claude to set up a quick
+CI script, to make sure code builds and is well-formatted. Claude was able to
+set up <code>clang-format</code> config, and spit out a bash script for CI checks.</p><p>I asked Claude to identify a short list of tests that can be run quickly, as
+this was pointed out in the Anthropic article as something that needs to be
+&ldquo;designed around&rdquo;.
+This is because LLMs don&rsquo;t have a sense of time, but we humans do.
+Claude identified some tests that were &ldquo;supposed&rdquo; to be fast, and they looked
+plausible enough to me.</p><p>Claude happily wrote them down in the updated <code>CLAUDE.md</code>, and we were ready to
+do some serious coding.</p><p>I turned on plan mode to ask Claude to create a plan for Project 1 (Threading).
+I knew there were four subtasks and asked Claude to identify them. Claude
+identified them correctly.
+At this time, I was running low on usage quota, so I asked Claude to save the
+plan to a file.
+Funnily enough, I told Claude to &ldquo;Commit the plan in the codebase&rdquo;, which
+Claude had difficulty understanding and wanted to kick off the execution.</p><blockquote><p>Interrupted · What should Claude do instead?</p><p>Commit the plan in the codebase</p><p>∴ Thinking&mldr;</p><p>The user wants me to commit the plan into the codebase. Let me first check what&rsquo;s currently in the git status and then create a commit with the implementation plan.</p><p>Wait, the user said &ldquo;Commit the plan in the codebase&rdquo; - they want me to save the implementation plan as a file in the codebase and commit it. Let me create the plan file and commit it.</p><p>Actually, re-reading the conversation, the user had a detailed implementation plan they shared. They want me to commit this plan document to the codebase. Let me create it as a file and commit it.</p><p>&mldr;</p></blockquote><p>After a minute of thinking, Claude saved the plan to a
+<a href=https://github.com/fangyi-zhou/vibe-coded-pintos/blob/master/plans/PROJECT1-PLAN.md>file</a>,
+and it&rsquo;s time to go on a break.</p><h2 id=session-1-lets-get-threading-going>Session 1: Let&rsquo;s get threading going</h2><p>Claude split the project into 4 tasks: alarm clock, priority scheduling,
+priority donation, and MLFQS scheduler.
+Since this is the first project, the coursework provided ample guidance for
+this project to be a warm-up task for students, although the
+<a href=https://www.scs.stanford.edu/25sp-cs212/pintos/pintos_2.html#SEC23>requirement</a>
+divided the project into 3 parts instead of 4.</p><p>Claude hinted to me that I should install Clang LSP, which I happily did, and
+then Claude started to generate code for the tasks.
+Claude completed the alarm clock task in only two minutes and verified the
+implementation by running the test.
+Then Claude quickly went on to implement priority scheduling. I had to
+interrupt Claude and ask it to commit the previous task.</p><p>After that, Claude continued with the implementation and ran the tests for
+priority scheduling.
+Unfortunately, the tests did not pass on the first try: Claude implemented
+the priority ordering the other way around. It quickly identified the error and
+inverted the sorting order.</p><p>At this point, Claude was quite happy to continue pumping out code. It quickly
+completed the third task, committed it, and moved on to the final task.
+Again, it only took a few minutes for Claude to finish. I remember taking quite
+a long time at university, having to go through corner cases and
+drawing diagrams.</p><p>The final task, MLFQS (Multi-Level Feedback Queue Scheduler), was relatively
+easy to implement, but the tests took quite a long time to run.
+Unfortunately, running them in parallel used too many resources, and the
+Claude Code process was killed by <code>pkill</code>.
+However, Claude recovered and completed the task on the second try.</p><p>At this point, the last thing was the design document. I had forgotten to
+download the design document template and place it in the git repository, so
+Claude looked everywhere for it. I realized it was probably my
+fault, interrupted Claude, downloaded the template, and prompted it to
+continue. Claude produced a plausible <a href=https://github.com/fangyi-zhou/vibe-coded-pintos/blob/master/doc/threads.tmpl>design
+doc</a>.</p><p>As we neared the completion of the project, I asked Claude to update the
+<code>CLAUDE.md</code> file and checked my usage. We had used around two-thirds of the
+session quota.</p><p>As in the previous session, I used a plan-mode prompt to ask Claude to plan for
+the next project. This time, I reminded Claude to commit after each task and
+write the design docs. Claude then explored the codebase and requirements.
+I was surprised by the token usage in plan mode, as
+it did not manage to complete within the remaining 1/3 session usage limit.
+I turned on some extra usage and invited Claude to finish. Here is the
+<a href=https://github.com/fangyi-zhou/vibe-coded-pintos/blob/master/plans/project2-plan.md>plan</a>.</p><h2 id=thoughts-and-reflections-sep-2026>Thoughts and Reflections (Sep 2026)</h2><p>I never finished writing about the other tasks, but they followed the same
+playbook: Claude came up with a plausible plan and implemented it reasonably
+well. Claude had some issues making small commits, but the result should be
+sufficient for computer science coursework, for a student who can&rsquo;t be bothered
+to do the coursework themself.</p><p>In the half-year since my initial experiment, I have developed some skill at
+identifying code generated by Claude, with its ever-increasing verbosity and
+use of particular &ldquo;load-bearing&rdquo; vocabulary.
+I would assume that people who use AI frequently would also be able to do the
+same, which may or may not be the case for teaching assistants at universities
+(probably PhD students who have to pay for AI subscriptions out of their own
+pockets).
+I would argue that the use of AI is still quite likely to impact computer
+science education a lot.</p><p>When I was in university, this coursework was not graded by a teaching
+assistant alone checking the implementation of the code, but in combination
+with an interactive code review where the teaching assistant discusses the
+design with the students, asking the students to demonstrate the correctness of
+the implementation w.r.t. concurrency and safety. Arguably, such a solution
+doesn&rsquo;t scale, but I believe it was a good solution.
+Just as software engineering has shifted in the age of AI, computer
+science education will probably have to shift to adopt the AI trend too.
+In the old days, &ldquo;Talk is cheap, show me the code&rdquo; worked. But now, one might
+say, &ldquo;Code is cheap; let&rsquo;s talk it through.&rdquo;</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>At the time of writing, Feb 2026.&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>People would probably disagree with this term, but the engineer literally
+sent the agents to work and walked away.&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></section><div class=post-tags></div></div></div></article></main><footer><div style=display:flex><a class=soc href=https://github.com/fangyi-zhou rel=me title=GitHub><svg class="feather"><use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github"/></svg></a><a class=border></a><a class=soc href=https://www.threads.com/@fangyi.zhou_ rel=me title=Threads><i class="si si-threads"></i></a><a class=border></a><a class=soc href=https://orcid.org/0000-0002-8973-0821 rel=me title=ORCID><i class="si si-orcid"></i></a><a class=border></a><a class=soc href="https://scholar.google.com/citations?user=PPEUHmwAAAAJ" rel=me title="Google Scholar"><i class="si si-googlescholar"></i></a><a class=border></a></div><div class=footer-info>2026 Fangyi Zhou © CC BY 4.0 | <a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></div></footer></div></body></html>
